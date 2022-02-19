@@ -246,6 +246,7 @@ public class MessageActivity extends Activity {
                             showToast(getString(R.string.send_msg_failed));
                             break;
                         case RtmStatusCode.PeerMessageError.PEER_MESSAGE_ERR_PEER_UNREACHABLE:
+                            Log.d("bug_testing", errorInfo.getErrorDescription());
                             showToast(getString(R.string.peer_offline));
                             break;
                         case RtmStatusCode.PeerMessageError.PEER_MESSAGE_ERR_CACHED_BY_SERVER:

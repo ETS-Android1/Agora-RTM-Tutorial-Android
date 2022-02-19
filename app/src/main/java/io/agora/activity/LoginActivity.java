@@ -71,8 +71,8 @@ public class LoginActivity extends Activity {
      */
     private void doLogin() {
         mIsInChat = true;
-
-        mRtmClient.login(null, mUserId, new ResultCallback<Void>() {
+        String token = "00649b4c7b9a9004b998670f39ffd98b745IAD6GPxikcbO+haqVPnX9dkbaKzo9MtYJ1Ev9Xu1c5yA8d2GBawAAAAAEAAal9kCS0ESYgEA6ANLQRJi";
+        mRtmClient.login(token, mUserId, new ResultCallback<Void>() {
             @Override
             public void onSuccess(Void responseInfo) {
                 Log.i(TAG, "login success");
@@ -87,7 +87,7 @@ public class LoginActivity extends Activity {
             public void onFailure(ErrorInfo errorInfo) {
                 CharSequence text = "User: " + mUserId + " failed to log in to the RTM system!" + errorInfo.toString();
                 int duration = Toast.LENGTH_SHORT;
-                Log.d("Bug", text.toString());
+                Log.d("", text.toString());
                 runOnUiThread(new Runnable() {
                     public void run() {
                         Toast toast = Toast.makeText(getApplicationContext(), text, duration);
@@ -97,6 +97,8 @@ public class LoginActivity extends Activity {
 
             }
         });
+
+
     }
 
     /**

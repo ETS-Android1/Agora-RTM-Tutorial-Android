@@ -49,6 +49,7 @@ public class ChatManager {
                         mMessagePool.insertOfflineMessage(rtmMessage, peerId);
                     } else {
                         for (RtmClientListener listener : mListenerList) {
+
                             listener.onMessageReceived(rtmMessage, peerId);
                         }
                     }
